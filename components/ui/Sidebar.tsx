@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 
 import AutoAwesomeOutlinedIcon from "@mui/icons-material/AutoAwesomeOutlined";
+import { useUI } from "../../context/ui";
 
 const MENU_ITEMS = [
   "Dashboard",
@@ -21,8 +22,9 @@ const MENU_ITEMS = [
 ];
 
 const Sidebar = () => {
+  const { sideMenuOpen, closeMenu } = useUI();
   return (
-    <Drawer open={true} anchor="left" onClose={() => {}}>
+    <Drawer open={sideMenuOpen} anchor="left" onClose={closeMenu}>
       <Box
         sx={{
           width: 250,
